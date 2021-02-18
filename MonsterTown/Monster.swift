@@ -12,7 +12,12 @@ class Monster {
         return "Grrr"
     }
     var town: Town?
-    var name = "Monster"
+    var name: String
+    
+    required init(town: Town?, monsterName: String) {
+        self.town = town
+        name = monsterName
+    }
     var victimPool: Int {
         get {
             return town?.population ?? 0
